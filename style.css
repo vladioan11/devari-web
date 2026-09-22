@@ -929,4 +929,112 @@ img, .responsive-img {
   border-radius: 3px;
   font-size: 0.82rem;
 }
+  /* In-Page Section Link Buttons */
+.section-action-center {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.section-action-center .btn {
+  border: 1px solid var(--border-active);
+  background-color: rgba(13, 21, 39, 0.85);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+}
+
+.section-action-center .btn:hover {
+  background-color: var(--primary-navy);
+  color: var(--accent-glow);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+}
+
+/* Hamburger Toggle Button (Hidden on Desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10001;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 38px;
+  height: 38px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animated Hamburger Transformation to 'X' */
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Navigation Drawer Breakpoint */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex; /* Show hamburger button on mobile */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: rgba(7, 13, 24, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-muted);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    z-index: 9998;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a:not(.btn) {
+    display: block !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(26, 42, 71, 0.6);
+    color: var(--text-primary);
+  }
+
+  .nav-links .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+
+  .section-action-center .btn {
+    width: 100%;
+    white-space: normal;
+  }
+}
 }
