@@ -18,15 +18,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Version parameter forces browser & Cloudflare cache refresh -->
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
-  <!-- Permanently Locked Sticky Top Menu Bar -->
+  <!-- Permanently Locked Header -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="#" class="brand-logo">
-        <span class="brand-box">Devari</span>
+        <span class="brand-name">DEVARI</span>
+        <span class="brand-divider"></span>
+        <span class="brand-tagline">Your Partner</span>
       </a>
 
       <nav class="nav-links">
@@ -39,7 +41,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero reveal">
     <div class="container">
       <div class="hero-badge">Naval Architecture & Marine Quality Control</div>
       <h1>Independent technical supervision for naval construction.</h1>
@@ -51,15 +53,15 @@
         <a href="#credentials" class="btn btn-secondary">Review Technical Standards</a>
       </div>
 
-      <!-- Hero Visual: Real Shipyard Block Fabrication & Heavy Gantry Crane -->
+      <!-- Real Shipyard Drydock Hull Inspection Image -->
       <div class="media-box hero-media">
         <img 
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80" 
-          alt="Heavy industrial shipyard gantry cranes and naval hull block assembly" 
+          src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcR7vYk0FtHO38aTOeU-GzgkBoEPS3yOOm8_PrgvtLutSDfwQ7hO7WOq6nj6U1WfaAlH-z57O5o_QbmTtQA" 
+          alt="Large commercial vessel resting in drydock for hull plating and structural inspection" 
           class="responsive-img"
           loading="eager"
         />
-        <div class="media-caption">Shipyard Hull Assembly & Structural Block Fabrication Oversight</div>
+        <div class="media-caption">Vessel Hull Plating & Bulbous Bow Inspection in Drydock</div>
       </div>
     </div>
   </section>
@@ -67,26 +69,26 @@
   <!-- Capabilities / Services -->
   <section id="services" class="section services-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="eyebrow">Core Capabilities</span>
         <h2>Shipyard & Technical Inspection Services</h2>
         <p>Protecting asset integrity from initial block fabrication through sea trials and delivery.</p>
       </div>
 
       <div class="grid cards-grid">
-        <div class="card">
+        <div class="card reveal">
           <div class="card-icon">01</div>
           <h3>Newbuild & Refit Supervision</h3>
           <p>On-site owner representation, block assembly monitoring, alignment checks, and drydock repair oversight.</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
           <div class="card-icon">02</div>
           <h3>Hull Inspection & QC Auditing</h3>
           <p>Weld seam quality verification, dimensional tolerance inspections, shell plating integrity, and coating system compliance (FROSIO/NACE).</p>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
           <div class="card-icon">03</div>
           <h3>NDT & Class Compliance</h3>
           <p>Third-party review of Ultrasonic (UT), Magnetic Particle (MPI), and Radiographic testing in accordance with IACS classification rules.</p>
@@ -95,21 +97,21 @@
     </div>
   </section>
 
-  <!-- Credentials Section with Visual -->
+  <!-- Credentials Section -->
   <section id="credentials" class="section credentials-section">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <span class="eyebrow">Quality Benchmarks</span>
         <h2>Survey Standards & Inspection Criteria</h2>
         <p>Strict adherence to classification rules, statutory maritime safety frameworks, and shipyard QA/QC standards.</p>
       </div>
 
       <div class="credentials-layout">
-        <!-- Visual: Certified Industrial Welding & Structural Steel Inspection -->
-        <div class="media-box cred-media">
+        <!-- Structural Welding QC Visual -->
+        <div class="media-box cred-media reveal">
           <img 
             src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" 
-            alt="Industrial welder inspecting high-strength steel seam weld quality in fabrication yard" 
+            alt="Industrial welder inspecting structural steel seam weld quality in fabrication yard" 
             class="responsive-img"
             loading="lazy"
           />
@@ -117,7 +119,7 @@
         </div>
 
         <div class="credentials-grid">
-          <div class="credential-card">
+          <div class="credential-card reveal">
             <div class="cred-status">Class Compliance</div>
             <h3>IACS Society Standards</h3>
             <p>Technical verification aligned with major classification societies (DNV, Lloyd's Register, Bureau Veritas, RINA).</p>
@@ -128,7 +130,7 @@
             </ul>
           </div>
 
-          <div class="credential-card">
+          <div class="credential-card reveal">
             <div class="cred-status">Inspection Protocol</div>
             <h3>NDT & Welding QC</h3>
             <p>Rigorous oversight of welder qualifications (WPS/PQR), assembly tolerances, and non-destructive joint testing.</p>
@@ -146,7 +148,7 @@
   <!-- About Section -->
   <section id="about" class="section about-section">
     <div class="container">
-      <div class="about-card">
+      <div class="about-card reveal">
         <div class="about-content">
           <span class="eyebrow">The Practice</span>
           <h2>Field-level precision without commercial conflict.</h2>
@@ -175,7 +177,7 @@
   <!-- Direct Contact Section -->
   <section id="contact" class="section contact-section">
     <div class="container">
-      <div class="contact-wrapper">
+      <div class="contact-wrapper reveal">
         
         <div class="contact-info-panel">
           <span class="eyebrow">Communications</span>
@@ -233,7 +235,7 @@
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-brand">
-        <span class="brand-box brand-box-sm">Devari</span>
+        <span class="brand-wordmark brand-wordmark-sm">DEVARI</span>
         <p>&copy; 2026 Devari. Independent naval construction consulting & marine QC inspection.</p>
       </div>
       <div class="footer-links">
@@ -244,6 +246,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scroll-Trigger Animation Observer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    });
+  </script>
 
 </body>
 </html>
