@@ -1,28 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <title>Devari | Your Partner</title>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>layoutit-project</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devari | Your Partner</title>
+  <meta name="description" content="Devari provides specialized advisory, consulting, and tailored corporate services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h3 class="h3">Devari | Your Partner</h3>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">Devari<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-primary">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Professional Solutions</div>
+      <h1>Strategic clarity for complex challenges.</h1>
+      <p class="hero-subtext">
+        We partner with forward-thinking enterprises to navigate risk, optimize operations, and achieve sustainable growth.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+        <a href="#services" class="btn btn-secondary">Explore Practice Areas</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6">
-        <h3 class="h3">h3. Lorem ipsum dolor sit amet.</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui. Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</p>
+  </section>
+
+  <!-- Services / Practice Areas -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our Focus</span>
+        <h2>Core Practice Areas</h2>
+        <p>Comprehensive corporate services tailored to the European and international business landscape.</p>
       </div>
-      <div class="col-6">
+
+      <div class="grid cards-grid">
+        <div class="card">
+          <div class="card-icon">01</div>
+          <h3>Corporate Strategy</h3>
+          <p>Long-range organizational planning, market entry assessments, and structural optimization for scaling ventures.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">02</div>
+          <h3>Regulatory & Compliance</h3>
+          <p>Assessing cross-border obligations, EU directives, and structural risk management protocols.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">03</div>
+          <h3>Transaction Advisory</h3>
+          <p>Support through due diligence, deal structures, and operational alignment during key transactions.</p>
+        </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="eyebrow">About Devari</span>
+          <h2>A grounded, disciplined approach to modern advisory.</h2>
+          <p>
+            Established to deliver direct, executive-grade counsel without institutional overhead. We work closely with founders, executive boards, and leadership teams across Central and Eastern Europe.
+          </p>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Independent</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">EU</span>
+              <span class="stat-label">Cross-Border Scope</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Start a Conversation</h2>
+          <p>Direct inquiries to our team. All discussions are held in strict confidence.</p>
+        </div>
+
+        <!-- 
+          To make this contact form submit emails straight to your inbox for free, 
+          you can point action to a free form service like Formspree (formspree.io) 
+          or Web3Forms (web3forms.com).
+        -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Alex Morgan" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" placeholder="alex@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Overview</label>
+            <textarea id="message" name="message" rows="5" placeholder="Brief outline of your inquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Devari. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
