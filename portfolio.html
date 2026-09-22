@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inspection & QC Portfolio | Devari</title>
   <meta name="description" content="Shipyard attendance, hull structural surveys, ballast tank inspections, and drydock quality control projects by Devari." />
-  <link rel="canonical" href="https://devari.eu/portfolio.html" />
+  <link rel="canonical" href="https://devari.eu/portfolio" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="/style.css?v=15" />
 </head>
 <body>
 
-<!-- Permanently Locked Header -->
+  <!-- Permanently Locked Header with Working Mobile Toggle -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="/" class="brand-logo">
@@ -23,15 +23,15 @@
         <span class="brand-tagline">Your Partner</span>
       </a>
 
-      <!-- Navigation Links -->
+      <!-- Desktop & Mobile Nav Menu -->
       <nav class="nav-links" id="navLinks">
         <a href="/#services" class="nav-item">Capabilities</a>
         <a href="/qualifications" class="nav-item">Qualifications</a>
-        <a href="/portfolio" class="nav-item">Portfolio</a>
+        <a href="/portfolio" class="nav-item active-link">Portfolio</a>
         <a href="/#contact" class="btn btn-primary nav-item">Contact Us</a>
       </nav>
 
-      <!-- Mobile Hamburger Button (Strictly hidden on desktop via CSS) -->
+      <!-- Mobile Hamburger Button -->
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle Navigation">
         <span></span>
         <span></span>
@@ -52,11 +52,11 @@
   </section>
 
   <!-- Portfolio Grid -->
-  <section class="section portfolio-section">
+  <section class="section">
     <div class="container">
       <div class="portfolio-grid">
 
-        <!-- Project 1: Drydock Hull Inspection -->
+        <!-- Project 1 -->
         <article class="portfolio-card reveal">
           <div class="portfolio-img-box">
             <img 
@@ -78,7 +78,7 @@
           </div>
         </article>
 
-        <!-- Project 2: Block Erection QC -->
+        <!-- Project 2 -->
         <article class="portfolio-card reveal">
           <div class="portfolio-img-box">
             <img 
@@ -100,7 +100,7 @@
           </div>
         </article>
 
-        <!-- Project 3: Ballast Tank Survey (Confined Space) -->
+        <!-- Project 3 -->
         <article class="portfolio-card reveal">
           <div class="portfolio-img-box">
             <img 
@@ -122,7 +122,7 @@
           </div>
         </article>
 
-        <!-- Project 4: Non-Destructive Testing (NDT) -->
+        <!-- Project 4 -->
         <article class="portfolio-card reveal">
           <div class="portfolio-img-box">
             <img 
@@ -177,7 +177,25 @@
     </div>
   </footer>
 
+  <!-- Complete Mobile Drawer Toggle & Scroll Observer Script -->
   <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
