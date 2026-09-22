@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inspector Qualifications & Standards | Devari</title>
   <meta name="description" content="Certifications, ISO/EN standards, NDT qualifications, and coating inspector accreditations held by Devari marine inspectors." />
-  <link rel="canonical" href="https://devari.eu/qualifications.html" />
+  <link rel="canonical" href="https://devari.eu/qualifications" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="/style.css?v=15" />
 </head>
 <body>
 
-<!-- Permanently Locked Header -->
+  <!-- Permanently Locked Header with Working Mobile Toggle -->
   <header class="site-header">
     <div class="container nav-container">
       <a href="/" class="brand-logo">
@@ -23,15 +23,15 @@
         <span class="brand-tagline">Your Partner</span>
       </a>
 
-      <!-- Navigation Links -->
+      <!-- Desktop & Mobile Nav Menu -->
       <nav class="nav-links" id="navLinks">
         <a href="/#services" class="nav-item">Capabilities</a>
-        <a href="/qualifications" class="nav-item">Qualifications</a>
+        <a href="/qualifications" class="nav-item active-link">Qualifications</a>
         <a href="/portfolio" class="nav-item">Portfolio</a>
         <a href="/#contact" class="btn btn-primary nav-item">Contact Us</a>
       </nav>
 
-      <!-- Mobile Hamburger Button (Strictly hidden on desktop via CSS) -->
+      <!-- Mobile Hamburger Button -->
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle Navigation">
         <span></span>
         <span></span>
@@ -56,7 +56,7 @@
     <div class="container">
       <div class="qual-grid">
 
-        <!-- Column 1: Naval Architecture & Surveying -->
+        <!-- Column 1 -->
         <div class="qual-card reveal">
           <div class="qual-icon">01</div>
           <h2>Naval Architecture & Marine Engineering</h2>
@@ -77,7 +77,7 @@
           </div>
         </div>
 
-        <!-- Column 2: Non-Destructive Testing (NDT) -->
+        <!-- Column 2 -->
         <div class="qual-card reveal">
           <div class="qual-icon">02</div>
           <h2>Non-Destructive Testing (NDT)</h2>
@@ -98,7 +98,7 @@
           </div>
         </div>
 
-        <!-- Column 3: Coating & Welding Inspection -->
+        <!-- Column 3 -->
         <div class="qual-card reveal">
           <div class="qual-icon">03</div>
           <h2>Welding & Protective Coatings (QC)</h2>
@@ -110,7 +110,7 @@
             </div>
             <div class="qual-item">
               <h4>IWS / EWS Welding Coordination</h4>
-              <p>Compliance auditing of Welding Procedure Qualifications (WPS / WPQR) and welder welder approval certifications according to ISO 9606-1.</p>
+              <p>Compliance auditing of Welding Procedure Qualifications (WPS / WPQR) and welder approval certifications according to ISO 9606-1.</p>
             </div>
             <div class="qual-item">
               <h4>IMO PSPC Protocol Assurance</h4>
@@ -189,7 +189,25 @@
     </div>
   </footer>
 
+  <!-- Complete Mobile Drawer Toggle & Scroll Observer Script -->
   <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
