@@ -17,6 +17,7 @@
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/* Hard reset for strict zero mobile overflow */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -33,6 +34,15 @@ html, body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+}
+
+/* Strict Image Sizing Rules */
+img, .responsive-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .container {
@@ -93,16 +103,16 @@ html, body {
   border-color: var(--accent-blue);
 }
 
-/* Header & Nav */
+/* Header & Logo */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(10, 15, 29, 0.9);
+  background-color: rgba(10, 15, 29, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-muted);
-  padding: 1.1rem 0;
+  padding: 0.9rem 0;
 }
 
 .nav-container {
@@ -114,21 +124,23 @@ html, body {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
   text-decoration: none;
   color: var(--text-primary);
 }
 
-.logo-mark {
-  display: flex;
+/* Navy Logo in White Box with Navy Outline */
+.logo-badge {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: linear-gradient(135deg, var(--primary-navy), #1e293b);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 8px;
-  color: var(--accent-glow);
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border: 2px solid var(--primary-navy);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
 }
 
 .logo-text {
@@ -159,9 +171,9 @@ html, body {
   color: var(--text-primary);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-  padding: 6.5rem 0 4rem;
+  padding: 5.5rem 0 3.5rem;
   text-align: center;
 }
 
@@ -176,11 +188,11 @@ html, body {
   background-color: rgba(30, 58, 138, 0.35);
   color: var(--accent-glow);
   border: 1px solid rgba(59, 130, 246, 0.35);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 4.8vw, 3.75rem);
+  font-size: clamp(1.85rem, 4.5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -190,10 +202,10 @@ html, body {
 }
 
 .hero-subtext {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
   max-width: 660px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
   line-height: 1.7;
 }
 
@@ -202,32 +214,34 @@ html, body {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
-/* Hero Media Showcase */
-.hero-media-wrapper {
-  max-width: 1020px;
-  margin: 0 auto;
-  border-radius: 12px;
+/* Controlled Media Containers (Fixes Blowouts) */
+.media-box {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border-muted);
   background-color: var(--bg-card);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
 }
 
-.hero-media-img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
+.hero-media {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-.hero-media-caption {
+.hero-media .responsive-img {
+  height: 380px;
+}
+
+.media-caption {
   padding: 0.75rem 1.25rem;
-  background-color: rgba(15, 23, 42, 0.95);
+  background-color: rgba(15, 23, 42, 0.96);
   color: var(--text-dim);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 600;
@@ -235,19 +249,19 @@ html, body {
   text-align: left;
 }
 
-/* Sections */
+/* Sections Common */
 .section {
-  padding: 5.5rem 0;
+  padding: 5rem 0;
 }
 
 .section-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3rem;
 }
 
 .section-header h2 {
-  font-size: 2.15rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.85rem;
@@ -255,7 +269,7 @@ html, body {
 
 .section-header p {
   color: var(--text-muted);
-  font-size: 1.02rem;
+  font-size: 1rem;
 }
 
 /* Capabilities Grid */
@@ -296,7 +310,7 @@ html, body {
   font-size: 0.95rem;
 }
 
-/* Credentials Section & Layout */
+/* Credentials Layout */
 .credentials-section {
   background: linear-gradient(180deg, var(--bg-main) 0%, #0d1424 100%);
   border-top: 1px solid var(--border-muted);
@@ -305,32 +319,20 @@ html, body {
 
 .credentials-layout {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   gap: 2.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 
-.credentials-media {
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border-muted);
-  background-color: var(--bg-card);
+.cred-media {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.cred-img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  display: block;
-}
-
-.cred-caption {
-  padding: 0.75rem 1rem;
-  background-color: rgba(15, 23, 42, 0.95);
-  color: var(--text-dim);
-  font-size: 0.78rem;
-  font-weight: 600;
-  border-top: 1px solid var(--border-muted);
+.cred-media .responsive-img {
+  height: 100%;
+  min-height: 280px;
 }
 
 .credentials-grid {
@@ -343,7 +345,7 @@ html, body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-muted);
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1.85rem;
 }
 
 .cred-status {
@@ -361,7 +363,7 @@ html, body {
 }
 
 .credential-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 0.65rem;
 }
 
@@ -392,25 +394,25 @@ html, body {
   margin-right: 0.65rem;
 }
 
-/* About Section */
+/* About Card */
 .about-card {
   background: linear-gradient(135deg, var(--bg-card) 0%, #111a33 100%);
   border: 1px solid var(--border-muted);
   border-radius: 12px;
-  padding: 3.5rem;
+  padding: 3rem;
 }
 
 .about-content h2 {
-  font-size: 2.15rem;
+  font-size: 2rem;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
 }
 
 .about-content p {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   max-width: 720px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
 }
 
 .stats-row {
@@ -420,7 +422,7 @@ html, body {
 }
 
 .stat-num {
-  font-size: 2.15rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--accent-glow);
   display: block;
@@ -434,32 +436,32 @@ html, body {
   color: var(--text-dim);
 }
 
-/* Contact Section & Form */
+/* Contact Wrapper */
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   gap: 3rem;
   background-color: var(--bg-card);
   border: 1px solid var(--border-muted);
   border-radius: 14px;
-  padding: 3.5rem;
+  padding: 3.25rem;
 }
 
 .contact-info-panel h2 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   margin-bottom: 0.75rem;
 }
 
 .contact-info-panel p {
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
   font-size: 0.95rem;
 }
 
 .contact-channels {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 .channel-label {
@@ -491,7 +493,7 @@ html, body {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .form-group {
@@ -570,27 +572,27 @@ html, body {
   color: var(--text-primary);
 }
 
-/* Responsive Breakpoints */
+/* Tablet & Mobile Breakpoints */
 @media (max-width: 900px) {
   .credentials-layout,
   .contact-wrapper {
     grid-template-columns: 1fr;
-    padding: 2.25rem 1.5rem;
-    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
   }
 
-  .hero-media-img {
-    height: 260px;
+  .hero-media .responsive-img {
+    height: 240px;
   }
 
-  .cred-img {
-    height: 260px;
+  .cred-media .responsive-img {
+    height: 240px;
   }
 }
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 0.85rem 0;
+    padding: 0.75rem 0;
   }
 
   .nav-links a:not(.btn) {
@@ -598,13 +600,12 @@ html, body {
   }
 
   .hero {
-    padding: 4.5rem 0 3.5rem;
+    padding: 4rem 0 2.5rem;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
-    margin-bottom: 2.5rem;
   }
 
   .hero-actions .btn {
@@ -612,11 +613,11 @@ html, body {
   }
 
   .about-card {
-    padding: 2.25rem 1.5rem;
+    padding: 2rem 1.25rem;
   }
 
   .stats-row {
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .footer-container {
