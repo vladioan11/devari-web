@@ -371,6 +371,7 @@ img, .responsive-img {
 }
 
 /* Section Action Center (In-page Links) */
+/* Section In-page Action Center */
 .section-action-center {
   margin-top: 3rem;
   text-align: center;
@@ -381,8 +382,13 @@ img, .responsive-img {
   border: 1px solid var(--border-active);
   background-color: rgba(13, 21, 39, 0.85);
   color: var(--text-primary);
-  padding: 0.85rem 1.85rem;
+  padding: 0.85rem 1.5rem;
   font-size: 0.95rem;
+  /* Allow button text to wrap cleanly on narrow screens */
+  white-space: normal;
+  max-width: 100%;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .section-action-center .btn:hover {
@@ -390,7 +396,6 @@ img, .responsive-img {
   color: var(--accent-glow);
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
 }
-
 /* Credentials Layout */
 .credentials-section {
   background: linear-gradient(180deg, var(--bg-main) 0%, #0a1120 100%);
@@ -876,20 +881,28 @@ img, .responsive-img {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ========================================================
-   MOBILE RESPONSIVENESS & STACKED "YOUR PARTNER"
-   ======================================================== */
+/* Hard Mobile Overflow Lock & Header Padding */
 @media (max-width: 768px) {
+  /* Prevent any button on mobile from forcing horizontal width */
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .nav-container {
+    padding: 0 1rem; /* Keeps hamburger safely inside the screen edge */
+  }
+
   .site-header {
     height: 66px;
+    padding: 0;
   }
 
   body {
     padding-top: 66px;
   }
 
-  /* Stack Brand Name & Tagline so "Your Partner" stays visible */
+  /* Stack Brand Name & Tagline */
   .brand-logo {
     flex-direction: column;
     align-items: flex-start;
@@ -901,7 +914,7 @@ img, .responsive-img {
   }
 
   .brand-name {
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     line-height: 1.1;
     letter-spacing: 0.08em;
   }
@@ -914,12 +927,11 @@ img, .responsive-img {
     margin-top: 2px;
   }
 
-  /* Mobile Hamburger Toggle */
   .nav-toggle {
     display: flex !important;
+    margin-right: 0.25rem; /* Guarantees the toggle button never clips the screen edge */
   }
 
-  /* Mobile Slide-down Drawer */
   .nav-links {
     position: fixed;
     top: 66px;
@@ -964,7 +976,7 @@ img, .responsive-img {
   .credentials-layout,
   .contact-wrapper {
     grid-template-columns: 1fr;
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.25rem;
     gap: 2rem;
   }
 
@@ -983,4 +995,5 @@ img, .responsive-img {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
 }
