@@ -103,6 +103,12 @@
           <p>Third-party review of Ultrasonic (UT), Magnetic Particle (MPI), and Radiographic testing in accordance with IACS classification rules.</p>
         </div>
       </div>
+      <!-- Direct Link to Portfolio -->
+      <div class="section-action-center reveal">
+        <a href="portfolio.html" class="btn btn-secondary">
+          View Inspection & Project Portfolio →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -150,6 +156,12 @@
             </ul>
           </div>
         </div>
+      </div>
+      <!-- Direct Link to Qualifications -->
+      <div class="section-action-center reveal">
+        <a href="qualifications.html" class="btn btn-secondary">
+          Review Full Inspector Accreditations & Standards →
+        </a>
       </div>
     </div>
   </section>
@@ -274,6 +286,39 @@
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     });
   </script>
+<script>
+    // Mobile Drawer Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+      });
 
+      // Close drawer when a nav link is tapped
+      navLinks.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+
+    // Scroll reveal observer
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
