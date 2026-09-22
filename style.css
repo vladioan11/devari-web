@@ -1,23 +1,22 @@
 :root {
-  --bg-main: #0a0f1d;
+  --bg-main: #070d18;
   --bg-card: #0f172a;
   --bg-surface: #1e293b;
   --border-muted: #1e293b;
-  --border-active: #2563eb;
+  --border-active: #1d4ed8;
   
   --text-primary: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
   
-  --primary-navy: #1e3a8a;
-  --accent-blue: #3b82f6;
+  --primary-navy: #0f1f3d;
+  --accent-blue: #2563eb;
   --accent-glow: #60a5fa;
   --accent-hover: #1d4ed8;
 
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Hard reset for strict zero mobile overflow */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -83,12 +82,12 @@ img, .responsive-img {
 .btn-primary {
   background-color: var(--accent-blue);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
   transform: translateY(-1px);
 }
 
@@ -103,16 +102,16 @@ img, .responsive-img {
   border-color: var(--accent-blue);
 }
 
-/* Header & Logo */
+/* Header & Clean Brand Typography */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(10, 15, 29, 0.92);
+  background-color: rgba(7, 13, 24, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-muted);
-  padding: 0.9rem 0;
+  padding: 1.1rem 0;
 }
 
 .nav-container {
@@ -122,35 +121,16 @@ img, .responsive-img {
 }
 
 .brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
   text-decoration: none;
   color: var(--text-primary);
-}
-
-/* Navy Logo in White Box with Navy Outline */
-.logo-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background-color: #ffffff;
-  border: 2px solid var(--primary-navy);
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  flex-shrink: 0;
+  display: inline-block;
 }
 
 .logo-text {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-}
-
-.logo-text span {
-  color: var(--accent-blue);
+  color: var(--text-primary);
 }
 
 .nav-links {
@@ -217,7 +197,7 @@ img, .responsive-img {
   margin-bottom: 3rem;
 }
 
-/* Controlled Media Containers (Fixes Blowouts) */
+/* Hard-Capped Media Boxes */
 .media-box {
   width: 100%;
   max-width: 100%;
@@ -249,7 +229,7 @@ img, .responsive-img {
   text-align: left;
 }
 
-/* Sections Common */
+/* Capabilities */
 .section {
   padding: 5rem 0;
 }
@@ -272,7 +252,6 @@ img, .responsive-img {
   font-size: 1rem;
 }
 
-/* Capabilities Grid */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -312,7 +291,7 @@ img, .responsive-img {
 
 /* Credentials Layout */
 .credentials-section {
-  background: linear-gradient(180deg, var(--bg-main) 0%, #0d1424 100%);
+  background: linear-gradient(180deg, var(--bg-main) 0%, #0c1527 100%);
   border-top: 1px solid var(--border-muted);
   border-bottom: 1px solid var(--border-muted);
 }
@@ -394,7 +373,7 @@ img, .responsive-img {
   margin-right: 0.65rem;
 }
 
-/* About Card */
+/* About Section */
 .about-card {
   background: linear-gradient(135deg, var(--bg-card) 0%, #111a33 100%);
   border: 1px solid var(--border-muted);
@@ -572,7 +551,7 @@ img, .responsive-img {
   color: var(--text-primary);
 }
 
-/* Tablet & Mobile Breakpoints */
+/* Mobile & Tablet */
 @media (max-width: 900px) {
   .credentials-layout,
   .contact-wrapper {
@@ -592,7 +571,7 @@ img, .responsive-img {
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 0.75rem 0;
+    padding: 0.85rem 0;
   }
 
   .nav-links a:not(.btn) {
