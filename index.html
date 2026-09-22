@@ -23,20 +23,29 @@
 <body>
 
   <!-- Permanently Locked Header -->
+<!-- Permanently Locked Header with Mobile Toggle -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="#" class="brand-logo">
+      <a href="index.html" class="brand-logo">
         <span class="brand-name">DEVARI</span>
         <span class="brand-divider"></span>
         <span class="brand-tagline">Your Partner</span>
       </a>
 
-     <nav class="nav-links">
-        <a href="#services">Capabilities</a>
-        <a href="qualifications.html">Qualifications</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="#contact" class="btn btn-primary">Contact Us</a>
+      <!-- Desktop & Mobile Nav Menu -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#services" class="nav-item">Capabilities</a>
+        <a href="qualifications.html" class="nav-item">Qualifications</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+        <a href="#contact" class="btn btn-primary nav-item">Contact Us</a>
       </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
