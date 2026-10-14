@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Scheduled Update | DEVARI</title>
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20" />
+
+  <style>
+    .wip-wrapper {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+    }
+
+    .wip-card {
+      background: linear-gradient(145deg, rgba(13, 23, 46, 0.9) 0%, rgba(7, 13, 24, 0.95) 100%);
+      border: 1px solid var(--border-active, rgba(59, 130, 246, 0.3));
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      padding: 3.5rem 2.5rem;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wip-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb, #38bdf8, #2563eb);
+      background-size: 200% 100%;
+      animation: pulseBar 3s ease infinite;
+    }
+
+    @keyframes pulseBar {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .wip-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #93c5fd;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #38bdf8;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #38bdf8;
+      animation: blink 2s infinite ease-in-out;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    .wip-card h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+
+    .wip-card p {
+      color: #94a3b8;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 2.25rem;
+    }
+
+    .wip-action-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .wip-action-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      padding: 0.75rem 1.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: normal;
+    }
+
+    .btn-secondary:hover {
+      border-color: #ffffff;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .wip-direct-contact {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      color: #64748b;
+      width: 100%;
+    }
+
+    .wip-direct-contact a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .wip-direct-contact a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .wip-card {
+        padding: 2.5rem 1.5rem;
+      }
+      .wip-card h1 {
+        font-size: 1.6rem;
+      }
+      .wip-action-buttons {
+        flex-direction: column;
+      }
+      .wip-action-buttons .btn,
+      .wip-action-buttons .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Locked Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="https://devari.eu/" class="brand-logo">
+        <span class="brand-name">DEVARI</span>
+        <span class="brand-divider"></span>
+        <span class="brand-tagline">Your Partner</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="https://devari.eu/#services" class="nav-item">Capabilities</a>
+        <a href="/qualifications" class="nav-item">Qualifications</a>
+        <a href="/portfolio" class="nav-item">Portfolio</a>
+        <a href="https://devari.eu/#contact" class="btn btn-primary nav-item">Contact Us</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main WIP Body -->
+  <main class="wip-wrapper">
+    <div class="wip-card">
+      <div class="wip-status-badge">
+        <span class="status-dot"></span>
+        Technical Review In Progress
+      </div>
+
+      <h1>Section Under Scheduled Update</h1>
+      <p>
+        This technical section is currently being updated with audited project specifications, class compliance data, and updated survey dossiers. Active operations and shipyard consulting remain fully available.
+      </p>
+
+      <div class="wip-action-group">
+        <div class="wip-action-buttons">
+          <a href="https://devari.eu/" class="btn btn-primary">Return to Overview</a>
+          <a href="mailto:contact@devari.eu?subject=Technical%20Inquiry%20-%20Devari" class="btn-secondary">Direct Inquiry</a>
+        </div>
+
+        <div class="wip-direct-contact">
+          Urgent vetting or shipyard attendance inquiries: 
+          <a href="mailto:contact@devari.eu">contact@devari.eu</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-name">DEVARI</span>
+        <p>&copy; 2026 Devari. Independent naval construction consulting & marine QC inspection.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://devari.eu/">Overview</a>
+        <a href="/qualifications">Qualifications</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="mailto:contact@devari.eu">contact@devari.eu</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+      });
+
+      navLinks.querySelectorAll('.nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('open');
+          navLinks.classList.remove('open');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
