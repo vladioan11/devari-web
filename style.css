@@ -1,6 +1,6 @@
 :root {
   /* Unified Industrial Shipyard Palette */
-  --bg-main: #070d18;
+  --bg-main: #17406D;
   --bg-card: #0d1527;
   --bg-surface: #152238;
   --border-muted: #1a2a47;
@@ -10,8 +10,8 @@
   --text-muted: #94a3b8;
   --text-dim: #64748b;
   
-  --primary-navy: #0a1931;
-  --accent-blue: #2563eb;
+  --primary-navy: #275A92;
+  --accent-blue: #009DD9;
   --accent-glow: #60a5fa;
   --accent-hover: #1d4ed8;
 
